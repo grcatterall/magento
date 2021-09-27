@@ -1,0 +1,53 @@
+<?php
+
+/** @var \Grazima\SlackForm\Block\Form $block */
+?>
+
+<div class="container register">
+        <p class="message"></p>
+    <div class="row display-block">
+        <form class="row slack-form light-boxshadow" id="slack-form">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="firstname" class="form-control" placeholder="First Name *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="lastname" class="form-control" placeholder="Last Name *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="tel" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *" value="" required/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="address1" class="form-control" placeholder="Address Line 1*" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address2" class="form-control" placeholder="Address Line 2*" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Postcode" class="form-control" placeholder="Postcode*" value="" required />
+                </div>
+                <div class="form-group">
+                    <?= $block->getCountries() ?>
+                </div>
+                <input id="form-submit" type="submit" class="btn btn-block btn-info btn-lg btnRegister" value="Post to slack" />
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Grazima_SlackForm/js/slack-form": {
+                    "enabled": "true"
+                }
+            }
+        }
+</script>
